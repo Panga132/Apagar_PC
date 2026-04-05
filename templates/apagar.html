@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apagando PC</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+p {
+    opacity: 0.8;
+}
+
+.loader {
+    margin: 20px auto;
+    border: 4px solid rgba(255,255,255,0.2);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+</style>
+
+    // Cerrar la ventana después de 7 segundos
+    <script>
+    setTimeout(function(){
+        window.open('', '_self', '');
+        window.close();
+    }, 7000);
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Apagando PC...</h1>
+    <div class="loader"></div>
+    <p>Cerrando programas y apagando el sistema</p>
+</div>
+
+</body>
+</html>

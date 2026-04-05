@@ -15,4 +15,12 @@ def apagar():
     return render_template("apagar.html")
 
 if __name__ == "__main__":
+    hostname = socket.gethostname()
+    ip = socket.gethostbyname(hostname)
+
+    print("\n=======================================")
+    print(f"Servidor NFC activo en:")
+    print(f"http://{ip}:5000/apagar")
+    print("=======================================\n")
+
     app.run(host="0.0.0.0", port=5000)

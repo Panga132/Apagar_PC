@@ -14,9 +14,17 @@ def apagar():
     os.startfile(script)
     return render_template("apagar.html")
 
+def get_local_ip():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        s.connect(("8.8.8.8", 80))
+        ip = s.getsockname()[0]
+    finally:
+        s.close()
+    return ip
+
 if __name__ == "__main__":
-    hostname = socket.gethostname()
-    ip = socket.gethostbyname(hostname)
+    ip = get_local_ip()
 
     print("\n=======================================")
     print(f"Servidor NFC activo en:")
